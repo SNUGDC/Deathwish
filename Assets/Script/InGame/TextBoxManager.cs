@@ -62,6 +62,14 @@ public class TextBoxManager : MonoBehaviour {
 		} 
 
 		theText.text = textLines [currentLine];
+		if (Global.ingame.GetBaseIsDark() == Enums.IsDark.Dark)
+		{
+			theText.color = Color.white;
+		}
+		else
+		{
+			theText.color = Color.black;
+		}
 		
 		if (Input.GetKeyDown (KeyCode.Space)) 
 		{

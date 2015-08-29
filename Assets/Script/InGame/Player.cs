@@ -140,6 +140,10 @@ public class Player : MonoBehaviour, IRestartable
 		{
 			Scene.Load("SelectStage", Scene.SceneType.StageSelect);
 		}
+		if (Input.GetKeyUp(KeyCode.I))
+		{
+			Global.ingame.ChangeDarkLight();
+		}
 	}
 	
 	public void PlayDieAnimSoundAndRestart(SoundType soundType)

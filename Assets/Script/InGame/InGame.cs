@@ -24,6 +24,11 @@ public class InGame
 		}
 	}
 
+	public IsDark GetBaseIsDark()
+	{
+		return isDark;
+	}
+
 	public IsDark GetIsDarkInPosition(GameObject gameObject)
 	{
 		foreach (Lighting light in LightsInMap)
