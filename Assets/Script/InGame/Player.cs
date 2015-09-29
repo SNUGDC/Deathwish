@@ -491,11 +491,30 @@ public class Player : MonoBehaviour, IRestartable
 		climber = new Climber (gameObject, ladderCheckerUp, ladderCheckerDown, groundChecker, climbSpeed, gravityScaleOfStartTime);
 		GetComponent<Rigidbody2D> ().gravityScale = gravityScaleOfStartTime;
 		pushableObjectsNearbyPlayer = new HashSet<GameObject>();
-		
-		//FIXME: scene reseting is should moved.
-		var shadowStarter = GameObject.FindObjectOfType<ShadowStarter>();
-		if (shadowStarter == null) {
-			Global.ingame.isDark = Enums.IsDark.Light;
+
+		if (saveData != null) {
+			Global.ingame.isDark = saveData.isDark;
+			transform.position = saveData.position;
+		} else {
+			//FIXME: scene reseting is should moved.
+			var shadowStarter = GameObject.FindObjectOfType<ShadowStarter>();
+			if (shadowStarter == null) {
+				Global.ingame.isDark = Enums.IsDark.Light;
+			}
 		}
+	}
+
+	SaveData saveData = null;
+    void IRestartable.Save()
+    {
+        saveData = new SaveData {
+			position = transform.position,
+			isDark = Global.ingame.isDark
+		};
+    }
+	
+	private class SaveData {
+		public Vector3 position = Vector3.zero;
+		public IsDark isDark = IsDark.Light;
 	}
 }

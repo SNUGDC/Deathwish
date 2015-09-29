@@ -226,4 +226,8 @@ public class SoundEffectController : MonoBehaviour, IRestartable
 			dicRecentlyPlayed[key] = false;
 		}
 	}
+
+    void IRestartable.Save()
+    {
+    }
 }

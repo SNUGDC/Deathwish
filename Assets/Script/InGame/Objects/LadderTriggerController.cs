@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Enums;
+using System;
 
 public class LadderTriggerController : MonoBehaviour, IRestartable
 {
@@ -43,4 +44,8 @@ public class LadderTriggerController : MonoBehaviour, IRestartable
 	{
 		penetrate = false;
 	}
+
+    void IRestartable.Save()
+    {
+    }
 }

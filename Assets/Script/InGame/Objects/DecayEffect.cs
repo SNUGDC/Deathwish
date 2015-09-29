@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Enums;
+using System;
 
 public class DecayEffect : MonoBehaviour, IRestartable {
 
@@ -38,4 +39,8 @@ public class DecayEffect : MonoBehaviour, IRestartable {
 		decayingParticle.SetActive(false);
 		afterDecayParticle.SetActive(false);
 	}
+
+    void IRestartable.Save()
+    {
+    }
 }

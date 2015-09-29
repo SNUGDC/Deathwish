@@ -23,4 +23,11 @@ public static class Restarter
 			restartable.Restart();
 		}
 	}
+	
+	public static void SaveAll()
+	{
+		foreach (IRestartable restartable in GetInterfaces<IRestartable>()) {
+			restartable.Save();
+		}
+	}
 }

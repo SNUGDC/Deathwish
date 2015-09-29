@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Enums;
+using System;
 
 public class AllAboutO2 : MonoBehaviour, IRestartable {
 
@@ -89,5 +90,28 @@ public class AllAboutO2 : MonoBehaviour, IRestartable {
 	{
 		Initialize();
 		isActive = false;
+		
+		if (saveData != null)
+		{
+			if (saveData.isActive)
+			{
+				Active();
+			}
+			else
+			{
+				Deactive();
+			}
+		}
+	}
+
+	SaveData saveData = null;
+    void IRestartable.Save()
+    {
+        saveData = new SaveData { isActive = this.isActive };
+    }
+	
+	private class SaveData
+	{
+		public bool isActive = false;
 	}
 }

@@ -8,7 +8,6 @@ public class InGame
 	public IsDark isDark = IsDark.Light;
 	public HashSet<Lamp> LampsInMap = new HashSet<Lamp>();
 	public HashSet<Lighting> LightsInMap = new HashSet<Lighting>();
-
 	public bool inWind;
 
 	public void ChangeDarkLight()

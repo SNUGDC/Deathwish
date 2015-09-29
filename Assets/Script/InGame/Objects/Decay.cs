@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Enums;
+using System;
 
 public class Decay : ObjectMonoBehaviour, IRestartable
 {
@@ -95,5 +96,28 @@ public class Decay : ObjectMonoBehaviour, IRestartable
 		}
 		renderer.sprite = normal;
 		spriteSwitch.enabled = true;
+		
+		if (saveData != null && saveData.isDestroy)
+		{
+			Debug.Log("Make destory true in decay");
+			isDestroy = true;
+			foreach (var collider in collider2Ds) {
+				collider.enabled = false;
+			}
+			renderer.sprite = transparent;
+			spriteSwitch.enabled = false;
+		}
+	}
+
+	private SaveData saveData = null;
+    void IRestartable.Save()
+    {
+		var isDestroyNow = destroyingCoroutine != null || this.isDestroy;
+        saveData = new SaveData { isDestroy = isDestroyNow };
+    }
+	
+	private class SaveData
+	{
+		public bool isDestroy = false;
 	}
 }

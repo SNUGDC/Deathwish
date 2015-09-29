@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using Enums;
+using System;
 
 public class Effect : MonoBehaviour, IRestartable
 {
@@ -32,5 +33,9 @@ public class Effect : MonoBehaviour, IRestartable
 		Effect_Light.SetActive(true);
 		Effect_Dark.SetActive(false);
 	}
+
+    void IRestartable.Save()
+    {
+    }
 }
 

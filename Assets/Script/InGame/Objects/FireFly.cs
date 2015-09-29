@@ -74,6 +74,23 @@ public class FireFly : MonoBehaviour, IRestartable {
 		currentPoint = movePoints[0];
 		gameObject.transform.position = movePoints[0].transform.position;
 		GetComponentInChildren<PlayerDetector>().gameObject.GetComponent<Collider2D>().enabled = true;
-		gameObject.GetComponent<SpriteRenderer>().sprite = gameObject.GetComponent<SpriteSwitch>().light;		
+		gameObject.GetComponent<SpriteRenderer>().sprite = gameObject.GetComponent<SpriteSwitch>().light;
+		
+		if (saveData != null)
+		{
+			currentPoint = movePoints[saveData.pointIndex];
+			gameObject.transform.position = currentPoint.transform.position;
+		}		
+	}
+
+	private SaveData saveData = null;
+    void IRestartable.Save()
+    {
+        saveData = new SaveData { pointIndex = Array.IndexOf(movePoints, currentPoint) };
+    }
+
+	private class SaveData
+	{
+		public int pointIndex;
 	}
 }

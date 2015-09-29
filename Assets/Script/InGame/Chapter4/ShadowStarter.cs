@@ -9,8 +9,12 @@ public class ShadowStarter : MonoBehaviour, IRestartable {
 		Global.ingame.isDark = Enums.IsDark.Dark;
 	}
 
+	// Player code do these things.
     void IRestartable.Restart()
     {
-		Global.ingame.isDark = Enums.IsDark.Dark;
+    }
+
+    void IRestartable.Save()
+    {
     }
 }

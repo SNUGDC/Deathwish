@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Enums;
+using System;
 
 public class Pushable : MonoBehaviour, IRestartable
 {
@@ -64,5 +65,21 @@ public class Pushable : MonoBehaviour, IRestartable
 		SpriteSwitch spriteSwitch = gameObject.GetComponent<SpriteSwitch>();
 		if(spriteSwitch != null)
 			gameObject.GetComponent<SpriteRenderer>().sprite = spriteSwitch.light;
+
+		if (saveData != null)
+		{
+			transform.position = saveData.position;
+		}
+	}
+
+	private SaveData saveData = null;
+    void IRestartable.Save()
+    {
+        saveData = new SaveData { position = transform.position };
+    }
+
+	private class SaveData
+	{
+		public Vector3 position;
 	}
 }

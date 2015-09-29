@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class Goal : MonoBehaviour, IRestartable
 {
@@ -51,4 +52,8 @@ public class Goal : MonoBehaviour, IRestartable
 	{
 		playerInZone = false;
 	}
+
+    void IRestartable.Save()
+    {
+    }
 }

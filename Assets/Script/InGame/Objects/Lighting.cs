@@ -50,4 +50,8 @@ public class Lighting: MonoBehaviour, IRestartable
 			Destroy(effect);
 	}
 
+    void IRestartable.Save()
+    {
+        // Thunder is not used in featival version.
+    }
 }
