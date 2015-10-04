@@ -53,14 +53,7 @@ public class Scene
 				Debug.Log("Clear all stage!");
 				SaveLoad.AllClear();
 
-				if (IsLightEnding())
-				{
-					Scene.Load("LightEnding", SceneType.Stage);
-				}
-				else
-				{
-					Scene.Load("DarkEnding", SceneType.Stage);
-				}
+				Scene.Load("DarkEnding", SceneType.Stage);
 			}
 			else
 			{
@@ -106,12 +99,7 @@ public class Scene
     {
 		if (nextLevelTag.Chapter == 5 && nextLevelTag.Stage == 1)
 		{
-			if (IsNormalEnding())
-			{
-				SaveLoad.AllClear();
-				Load("NormalEnding", SceneType.Stage);
-				return;
-			}
+			Scene.Load("DarkEnding", SceneType.Stage);
 		}
 		var nextSceneLevel = levelTagToMapName[nextLevelTag];
 		Load(nextSceneLevel.ToString(), SceneType.Stage);
@@ -183,7 +171,11 @@ public class Scene
 
     public static LevelTag currentLevelTag {
 		 get {
-			 return mapNameToLevelTag[currentSceneName];
+			 if (mapNameToLevelTag.ContainsKey(currentSceneName)) {
+				 return mapNameToLevelTag[currentSceneName];
+			 }
+			 Debug.LogError("Cannot get current level tag. "  + currentSceneName);
+			 return new LevelTag("1-1");
 		 } 
 	}
 

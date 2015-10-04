@@ -36,6 +36,7 @@ public class SwitchDarkLight : MonoBehaviour, IRestartable
 
 	IEnumerator PlayMirrorEffect()
 	{
+		Restarter.SaveAll();
 		//chapter 5 has 2 player.
 		var players = FindObjectsOfType<Player>();
 
@@ -78,8 +79,6 @@ public class SwitchDarkLight : MonoBehaviour, IRestartable
 			player.canMove = true;
 		} 
 		isItUsedNow = false;
-
-		Restarter.SaveAll();
 	}
 
 	void OnTriggerEnter2D(Collider2D player)
