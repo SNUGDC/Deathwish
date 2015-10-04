@@ -65,7 +65,7 @@ namespace UI
 
 		public bool IsLocked()
 		{
-			if (parsedLevelTag.Chapter == 0)
+			if (parsedLevelTag.Chapter == 1 && parsedLevelTag.Stage == 1)
 			{
 				return false;
 			}
