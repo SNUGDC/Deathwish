@@ -151,6 +151,11 @@ public class Player : MonoBehaviour, IRestartable
 
 	void MoveMainCamera()
 	{
+		if (mainCameraController == null)
+		{
+			return;
+		}
+
 		if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.DownArrow) ||
 			Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow) ||
 			climber.IsClimbing() || !groundChecker.IsGrounded() || pastPosition != transform.position ||
