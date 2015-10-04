@@ -3,6 +3,7 @@ using System.Collections;
 using Enums;
 using UnityStandardAssets.ImageEffects;
 using System;
+using System.Linq;
 
 public class SwitchDarkLight : MonoBehaviour, IRestartable
 {
@@ -35,12 +36,24 @@ public class SwitchDarkLight : MonoBehaviour, IRestartable
 
 	IEnumerator PlayMirrorEffect()
 	{
-		Player player = FindObjectOfType<Player>();
+		//chapter 5 has 2 player.
+		var players = FindObjectsOfType<Player>();
 
 		isItUsedNow = true;
-		player.canMove = false;
+		foreach (var player in players) {
+			player.canMove = false;
+		} 
 		blur.blurSize = 0;
 		blurEffectCamera.enabled = true;
+		
+		// chapter 5 has seprated camera.
+		// other chapter's camera is in player so only chapter 5 should be fixed.
+		var chapter5Camera = FindObjectOfType<Chapter5Camera>();
+		if (chapter5Camera != null)
+		{
+			blurEffectCamera.GetComponent<CameraController>().enabled = false;
+			blurEffectCamera.transform.position = chapter5Camera.transform.position;
+		}
 
 		SoundEffectController soundEffectController
 			= GameObject.FindObjectOfType(typeof(SoundEffectController)) as SoundEffectController;
@@ -61,7 +74,9 @@ public class SwitchDarkLight : MonoBehaviour, IRestartable
 		}
 
 		blurEffectCamera.enabled = false;
-		player.canMove = true;
+		foreach (var player in players) {
+			player.canMove = true;
+		} 
 		isItUsedNow = false;
 
 		Restarter.SaveAll();
