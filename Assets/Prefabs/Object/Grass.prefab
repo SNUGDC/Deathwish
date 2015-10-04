@@ -8,9 +8,11 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 446504}
-  - 61: {fileID: 6117094}
   - 114: {fileID: 11419696}
   - 114: {fileID: 11499520}
+  - 68: {fileID: 6806706}
+  - 68: {fileID: 6886124}
+  - 68: {fileID: 6802888}
   m_Layer: 0
   m_Name: Grass
   m_TagString: Grass
@@ -44,7 +46,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 138448}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 16, y: 40.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 496248}
@@ -62,8 +64,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 446504}
   m_RootOrder: 0
---- !u!61 &6117094
-BoxCollider2D:
+--- !u!68 &6802888
+EdgeCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -73,8 +75,37 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: 1, y: 2}
+  m_Points:
+  - {x: -.5, y: -.992340088}
+  - {x: .0172405243, y: .804599762}
+--- !u!68 &6806706
+EdgeCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 138448}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+  - {x: -.5, y: -.992340088}
+  - {x: .5, y: -.992340088}
+--- !u!68 &6886124
+EdgeCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 138448}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+  - {x: -.0172405243, y: .85823822}
+  - {x: .5, y: -.965518951}
 --- !u!114 &11419696
 MonoBehaviour:
   m_ObjectHideFlags: 1
