@@ -101,6 +101,8 @@ public class Scene
 		{
 			Scene.Load("DarkEnding", SceneType.Stage);
 		}
+		var nextSceneLevel = levelTagToMapName[nextLevelTag];
+		Load(nextSceneLevel.ToString(), SceneType.Stage);
     }
 
     private static bool IsNormalEnding()
