@@ -35,7 +35,10 @@ public class SwitchDarkLight : MonoBehaviour, IRestartable
 
 	IEnumerator PlayMirrorEffect()
 	{
+		Player player = FindObjectOfType<Player>();
+
 		isItUsedNow = true;
+		player.canMove = false;
 		blur.blurSize = 0;
 		blurEffectCamera.enabled = true;
 
@@ -58,6 +61,7 @@ public class SwitchDarkLight : MonoBehaviour, IRestartable
 		}
 
 		blurEffectCamera.enabled = false;
+		player.canMove = true;
 		isItUsedNow = false;
 
 		Restarter.SaveAll();
@@ -83,7 +87,8 @@ public class SwitchDarkLight : MonoBehaviour, IRestartable
 	{
 		if (mirrorEffectCoroutine != null)
 			StopCoroutine(mirrorEffectCoroutine);
-		blurEffectCamera.enabled = false;
+		if (blurEffectCamera != null)
+			blurEffectCamera.enabled = false;
 	}
 
 	void IRestartable.Restart()
