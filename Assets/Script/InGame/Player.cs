@@ -133,12 +133,12 @@ public class Player : MonoBehaviour, IRestartable
 		MoveMainCamera();
 		pastPosition = transform.position;
 		
-		if (Input.GetKeyUp(KeyCode.C))
+		if (Input.GetKeyUp(KeyCode.C) && Chapter5Cheat.IsCheatAvailable(this))
 		{
 			Scene.LoadNextStageAndSave();
 			TrackClearCheat();
 		}
-		if (Input.GetKeyUp(KeyCode.X))
+		if (Input.GetKeyUp(KeyCode.X) && Chapter5Cheat.IsCheatAvailable(this))
 		{
 			Global.ingame.ChangeDarkLight();
 			Scene.LoadNextStageAndSave();
