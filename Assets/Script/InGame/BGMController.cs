@@ -25,6 +25,11 @@ public class BGMController : MonoBehaviour
 	//Implementation for cutscene bgm needed
 	void SetBGM()
 	{
+    if(Scene.IsNowEndingScene())
+    {
+      return;
+    }
+
 		if(Scene.currentSceneType == Scene.SceneType.MainScene || Scene.currentSceneType == Scene.SceneType.StageSelect)
 		{
 			audioSource.clip = IntroSound;

@@ -24,6 +24,11 @@ public class Scene
     public static MapName currentSceneName = new MapName("WorkShop");
 	public static SceneType currentSceneType = SceneType.Stage;
 
+  public static bool IsNowEndingScene()
+  {
+    return currentSceneName.ToString().ToLower().IndexOf("end") != -1;
+  }
+
 	static Scene()
 	{
 		AfterLoad ();
