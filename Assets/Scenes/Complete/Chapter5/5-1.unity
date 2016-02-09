@@ -400,6 +400,10 @@ Prefab:
       propertyPath: DarkMode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11433688, guid: 0427c24af8e304691bcc5bd39a66334d, type: 2}
+      propertyPath: theText
+      value: 
+      objectReference: {fileID: 4900000, guid: 432e94d02e317480cb88bdcd0be36ef0, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0427c24af8e304691bcc5bd39a66334d, type: 2}
   m_IsPrefabParent: 0
@@ -3023,6 +3027,10 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11493590, guid: 6c6f11a231c704251a1749967149ee46, type: 2}
+      propertyPath: textFiles
+      value: 
+      objectReference: {fileID: 4900000, guid: 432e94d02e317480cb88bdcd0be36ef0, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6c6f11a231c704251a1749967149ee46, type: 2}
   m_IsPrefabParent: 0
