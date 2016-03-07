@@ -1,16 +1,17 @@
-……
-응. 여기가 제일 꼭대기야.
-여긴...약간 특이한 곳이야. 너와 내가 함께 있을 수 있는 곳이지만, 계속 여기 머무를 수는 없어.
-그렇지만 한 가지 방법이 있어.
-저 아래, 보여? 우리 둘이 함께 저 아래로 뛰어내리면...이번엔 정말, 계속 함께 할 수 있어. 여기가 아닌...다른 행복한 곳에서.
-……
-괜찮아. 나도 같이 갈게. 함께 가는거야...자.
+﻿……
+We finally made it to the top.
+This is.. a rather strange place where you and I can coexist.. 
+but we cannot stay here for long.
+However, there is one solution.. 
+You see this cliff here? If the two of us jump off together, then we can really be together forever..  not here, but in a better place
+......
+What are waiting for? I'm right here, I'll jump with you.. 
+come on...
 EFFECT_1
-정말로 뛰어내린 거야?
-……
-난 널 계속 지켜봐왔어..
-넌 정말 착한 아이야
+you really jumped?
+......
+I've been watching you for a long time.
+You really are a nice girl aren't you.
 
-우리 계속 함께 하는거야…
-
-영원히
+We will be together
+Forever.
