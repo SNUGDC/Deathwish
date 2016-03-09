@@ -5,6 +5,7 @@ public class ChapterStartTextViewer : MonoBehaviour {
 
 	public GameObject chapterTitleText;
 	public GameObject chapterPrologueText;
+	public TextAsset chapterPrologueTextFile;
 	public GameObject chapterBackground;
 
 	// Use this for initialization
@@ -15,6 +16,12 @@ public class ChapterStartTextViewer : MonoBehaviour {
 
 		// Player CANNOT move when prologue is playing.
 		GameObject.FindObjectOfType<Player>().canMove = false;
+
+		if (chapterPrologueText != null && chapterPrologueTextFile != null)
+		{
+			var textMesh = chapterPrologueText.GetComponent<TextMesh>();
+			textMesh.text = chapterPrologueTextFile.text;
+		}
 
 		yield return StartCoroutine(ViewText(chapterTitleText.GetComponent<TextMesh>()));
 		
