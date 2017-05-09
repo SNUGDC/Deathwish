@@ -28,14 +28,23 @@ public class Pushable : MonoBehaviour, IRestartable
 			}
 		}
 
+		Rigidbody2D rigidbody2d = GetComponent<Rigidbody2D>();
 		if (Global.ingame.GetIsDarkInPosition(gameObject) == IsDark.Light)
 		{
-			gameObject.GetComponent<Rigidbody2D>().isKinematic = false;
+			// Setting isKinematic every frame cause physics bug
+			if (rigidbody2d.isKinematic == true)
+			{
+				rigidbody2d.isKinematic = false;
+			}
 			CheckLandingForSoundEffect ();
 		}
 		else if (Global.ingame.GetIsDarkInPosition(gameObject) == IsDark.Dark)
 		{
-			gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
+			// Setting isKinematic every frame cause physics bug
+			if (rigidbody2d.isKinematic == false)
+			{
+				rigidbody2d.isKinematic = true;
+			}
 		}
 	}
 
