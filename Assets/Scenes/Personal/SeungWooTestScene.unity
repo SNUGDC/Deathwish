@@ -518,9 +518,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _displacementTex: {fileID: 2800000, guid: d5733bc1ed7300048a51e5d06ac38e9c, type: 3}
-  _waterTex: {fileID: 2800000, guid: d9ac64f259a8f734a95ea5210ad639b8, type: 3}
+  _waterTex: {fileID: 2800000, guid: fc3f91b4d78c8404c8abcbc6b913bfc9, type: 3}
   _turbulence: 0.3
   _scrollOffset: 0
+  _opacity: 2
 --- !u!114 &792716288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -590,7 +591,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1567816884}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.060465813, y: 0, z: 10}
+  m_LocalPosition: {x: 2.5, y: -0.9, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
