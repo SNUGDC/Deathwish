@@ -9,6 +9,7 @@
 		_BaseHeight ("BaseHeight", float) = 0.4
 		_Turbulence ("Turbulence", float) = 0.3
 		_ScrollOffset ("ScrollOffset", float) = 0
+		_Opacity ("Opacity", float) = 1
 	}
 	SubShader
 	{
@@ -47,6 +48,7 @@
 			float _BaseHeight;
 			fixed _Turbulence;
 			fixed _ScrollOffset;
+			fixed _Opacity;
 			
 			v2f vert (appdata v)
 			{
@@ -68,6 +70,8 @@
 			
 			fixed4 frag (v2f i) : SV_Target
 			{
+
+
 				fixed4 waterCol = tex2D(_WaterTex, i.uv);
 				fixed maskValue = tex2D(_MaskTex, i.uv).r;
 
@@ -83,7 +87,7 @@
 				i.uv.y += dis * 0.006 * isTexelBelow * maskValue * _Turbulence;
 
 				fixed4 col = tex2D(_MainTex, fixed2(i.uv.x, i.uv.y)); 
-				fixed waterColBlendFac = maskValue * isTexelBelow * 0.5;				
+				fixed waterColBlendFac = maskValue * isTexelBelow * _Opacity;				
 				col.r = lerp(col.r, waterCol.r, waterColBlendFac);
 				col.g = lerp(col.g, waterCol.g, waterColBlendFac);
 				col.b = lerp(col.b, waterCol.b, waterColBlendFac);

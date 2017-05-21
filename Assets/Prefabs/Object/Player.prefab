@@ -814,7 +814,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
-  jumpPower: 25
+  jumpPower: 17
   climbSpeed: 10
   windSpeed: 21
   maxSpeedInWater: 5
