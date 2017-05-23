@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Enums;
 
 public class Floatable : MonoBehaviour {
 
@@ -35,7 +36,7 @@ public class Floatable : MonoBehaviour {
 			transform.position = new Vector2(transform.position.x, upperBoundOfWaterCollider);
 			GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 		}
-		else
+		else if (Global.ingame.GetIsDarkInPosition(gameObject) == IsDark.Light)
 		{
 			GetComponent<Rigidbody2D>().gravityScale = 0;
 			GetComponent<Rigidbody2D>().velocity = new Vector2(0, 10);
