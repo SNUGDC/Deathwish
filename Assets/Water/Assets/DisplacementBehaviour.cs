@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Enums;
 
 public class DisplacementBehaviour : MonoBehaviour 
 {
@@ -13,10 +14,14 @@ public class DisplacementBehaviour : MonoBehaviour
     public float _turbulence = 1f;
     public float _scrollOffset = 0f;
 	public float _opacity = 1f;
+	public float _tick = Time.time*0.025f;
 
     private GameObject _postRenderCamObj;
     private Camera _postRenderCam;
     private Camera _screenCam;
+
+
+	private bool isActive;
 
     void Awake() 
     {
@@ -33,7 +38,9 @@ public class DisplacementBehaviour : MonoBehaviour
         _mat = new Material(shader);
     }
 
-    void OnPostRender()
+
+
+	void OnPostRender()
 	{
         _postRenderCam.CopyFrom(_screenCam);
         _postRenderCam.clearFlags = CameraClearFlags.SolidColor;
@@ -48,7 +55,8 @@ public class DisplacementBehaviour : MonoBehaviour
         _mat.SetFloat("_Turbulence", _turbulence);
         _mat.SetFloat("_ScrollOffset", _scrollOffset);
 		_mat.SetFloat("_Opacity", _opacity);
-        Graphics.Blit(_screenTex, null, _mat);
+		_mat.SetFloat("_Tick", _tick);
+		Graphics.Blit(_screenTex, null, _mat);
 	}
 
     private void CreatePostRenderCam() 

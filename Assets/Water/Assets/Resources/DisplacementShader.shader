@@ -10,6 +10,7 @@
 		_Turbulence ("Turbulence", float) = 0.3
 		_ScrollOffset ("ScrollOffset", float) = 0
 		_Opacity ("Opacity", float) = 1
+		_Tick ("Tick", float) = 0
 	}
 	SubShader
 	{
@@ -49,6 +50,7 @@
 			fixed _Turbulence;
 			fixed _ScrollOffset;
 			fixed _Opacity;
+			fixed _Tick;
 			
 			v2f vert (appdata v)
 			{
@@ -61,10 +63,10 @@
 			}
 
 			float wave(float x) {
-				fixed waveOffset = 	cos((x - _Time + _ScrollOffset) * 60) * 0.004
-									+ cos((x - 2 * _Time + _ScrollOffset) * 20) * 0.008
-									+ sin((x + 2 * _Time + _ScrollOffset) * 35) * 0.01
-									+ cos((x + 4 * _Time + _ScrollOffset) * 70) * 0.001;
+				fixed waveOffset = 	cos((x - _Tick + _ScrollOffset) * 60) * 0.004
+									+ cos((x - 2 * _Tick + _ScrollOffset) * 20) * 0.008
+									+ sin((x + 2 * _Tick + _ScrollOffset) * 35) * 0.01
+									+ cos((x + 4 * _Tick + _ScrollOffset) * 70) * 0.001;
 				return _BaseHeight + waveOffset * _Turbulence;
 			}
 			
@@ -80,8 +82,8 @@
 				fixed isTexelBelow = 1 - isTexelAbove;
 
 				fixed2 disPos = i.uv;
-				disPos.x += (_Time[0]) % 2;
-				disPos.y += (_Time[0]) % 2;
+				disPos.x += (_Tick) % 2;
+				disPos.y += (_Tick) % 2;
 				fixed4 dis = tex2D(_DisplacementTex, disPos);
 				i.uv.x += dis * 0.006 * isTexelBelow * maskValue * _Turbulence;
 				i.uv.y += dis * 0.006 * isTexelBelow * maskValue * _Turbulence;

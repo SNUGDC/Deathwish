@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using Enums;
 
 public class Water : MonoBehaviour, IRestartable {
+
 
 	bool isActive;
 
@@ -22,8 +24,10 @@ public class Water : MonoBehaviour, IRestartable {
 		{
 			GetComponent<SpriteRenderer>().enabled = true;
 			isActive = false;
+
 		}
 	}
+	
 	
 	void IRestartable.Restart()
 	{
