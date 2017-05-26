@@ -10,7 +10,7 @@ public class MeshOrderChange : MonoBehaviour
 	void Update()
 	{
 
-		_renderer.sortingLayerName = "LayerName";
+		_renderer.sortingLayerName = "Default";
 		_renderer.sortingOrder = 100;
 	}
 
