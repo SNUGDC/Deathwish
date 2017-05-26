@@ -7,6 +7,10 @@ public class DynamicWater : MonoBehaviour {
     //Our renderer that'll make the top of the water visible
     LineRenderer Body;
 
+	//Water dimensions
+	[SerializeField]
+	private float _Left, _Width, _Top, _Bottom;
+	
     //Our physics arrays
     float[] xpositions;
     float[] ypositions;
@@ -43,7 +47,7 @@ public class DynamicWater : MonoBehaviour {
     void Start()
     {
         //Spawning our water
-        SpawnWater(-20,20,-1,-20);
+        SpawnWater(_Left,_Width,_Top,_Bottom);
     }
 
     
