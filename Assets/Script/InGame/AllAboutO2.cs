@@ -20,6 +20,7 @@ public class AllAboutO2 : MonoBehaviour, IRestartable {
 	private Vector3 initBarScale;
 	private float initTipPosX;
 	private bool isActive = false;
+	private Player player;
 
 	// Use this for initialization
 	void Start () {
@@ -32,12 +33,14 @@ public class AllAboutO2 : MonoBehaviour, IRestartable {
 		initBarScale = O2BarRenderer.gameObject.transform.localScale;
 		initTipPosX = O2BarRenderer.bounds.max.x;
 
+		player = FindObjectOfType<Player>();
+
 		Initialize();
 	}
 
 	// Update is called once per frame
 	void Update () {
-		if (isActive && (currentAmountO2 > 0))
+		if (player.canMove && isActive && (currentAmountO2 > 0))
 		{
 			currentAmountO2 -= Time.deltaTime;
 			UpdateO2Bar();
