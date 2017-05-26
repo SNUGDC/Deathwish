@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Enums;
 
 public class DynamicWater : MonoBehaviour {
 
@@ -36,7 +37,8 @@ public class DynamicWater : MonoBehaviour {
     float baseheight;
     float left;
     float bottom;
-    
+
+
 
     void Start()
     {
@@ -179,8 +181,11 @@ public class DynamicWater : MonoBehaviour {
         
     }
 
-    //Same as the code from in the meshes before, set the new mesh positions
-    void UpdateMeshes()
+
+
+
+	//Same as the code from in the meshes before, set the new mesh positions
+	void UpdateMeshes()
     {
         for (int i = 0; i < meshes.Length; i++)
         {
