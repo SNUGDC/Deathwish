@@ -19,6 +19,7 @@ public class Player : MonoBehaviour, IRestartable
 	public GroundChecker groundChecker;
 	public LadderCheckerUp ladderCheckerUp;
 	public LadderCheckerDown ladderCheckerDown;
+	public Collider2D o2CheckCollider;
 	public GameObject playerSpriteObject;
 	public SoundEffectController soundEffectController;
 	public WindDirection windDirection;
@@ -101,9 +102,9 @@ public class Player : MonoBehaviour, IRestartable
 			return;
 		}
 
-		if (IsUnderwater() && !allAboutO2.IsActive())
+		if (IsSubmerged() && !allAboutO2.IsActive())
 			allAboutO2.Active();
-		if (!IsUnderwater() && allAboutO2.IsActive())
+		if (!IsSubmerged() && allAboutO2.IsActive())
 			allAboutO2.Deactive();
 
 		if(gameObject.transform.position.y - yOfLowestObject <= -10 || Input.GetKeyDown(KeyCode.R))
@@ -518,6 +519,18 @@ public class Player : MonoBehaviour, IRestartable
 			GameObject pushableObject = coll.gameObject;
 			pushableObjectsNearbyPlayer.Remove(pushableObject);
 		}
+	}
+
+	bool IsSubmerged()
+	{
+		Collider2D[] otherColliders = Physics2D.OverlapAreaAll(o2CheckCollider.bounds.max, o2CheckCollider.bounds.min);
+		foreach (Collider2D otherCollider in otherColliders)
+		{
+			if ((otherCollider.gameObject.tag == "Water") && 
+				(otherCollider.gameObject.GetComponent<Water>().IsActive()))
+				return true;
+		}
+		return false;
 	}
 
 	bool IsUnderwater()
