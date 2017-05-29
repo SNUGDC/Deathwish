@@ -1860,7 +1860,12 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 0.6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6173618, guid: 00f38597ee7dce14d95980cf37cd6b15, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6173618, guid: 00f38597ee7dce14d95980cf37cd6b15, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 00f38597ee7dce14d95980cf37cd6b15, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &402517314
@@ -2037,7 +2042,12 @@ Prefab:
       propertyPath: m_Name
       value: Wall (5)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6173618, guid: 00f38597ee7dce14d95980cf37cd6b15, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6173618, guid: 00f38597ee7dce14d95980cf37cd6b15, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 00f38597ee7dce14d95980cf37cd6b15, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &429817344 stripped
@@ -2520,6 +2530,18 @@ Prefab:
     - target: {fileID: 122268, guid: 00f38597ee7dce14d95980cf37cd6b15, type: 2}
       propertyPath: m_Name
       value: Wall (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173618, guid: 00f38597ee7dce14d95980cf37cd6b15, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173618, guid: 00f38597ee7dce14d95980cf37cd6b15, type: 2}
+      propertyPath: m_Size.y
+      value: 6.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173618, guid: 00f38597ee7dce14d95980cf37cd6b15, type: 2}
+      propertyPath: m_Offset.y
+      value: -0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 00f38597ee7dce14d95980cf37cd6b15, type: 2}
@@ -3593,7 +3615,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6173618, guid: 00f38597ee7dce14d95980cf37cd6b15, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6173618, guid: 00f38597ee7dce14d95980cf37cd6b15, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 00f38597ee7dce14d95980cf37cd6b15, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &817099840 stripped
@@ -5152,7 +5179,12 @@ Prefab:
       propertyPath: m_Name
       value: Wall (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6173618, guid: 00f38597ee7dce14d95980cf37cd6b15, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6173618, guid: 00f38597ee7dce14d95980cf37cd6b15, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 00f38597ee7dce14d95980cf37cd6b15, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1216077896 stripped
@@ -7147,7 +7179,12 @@ Prefab:
       propertyPath: m_Name
       value: Wall (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6173618, guid: 00f38597ee7dce14d95980cf37cd6b15, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6173618, guid: 00f38597ee7dce14d95980cf37cd6b15, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 00f38597ee7dce14d95980cf37cd6b15, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1588838864
@@ -7559,7 +7596,12 @@ Prefab:
       propertyPath: m_Name
       value: Wall (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6173618, guid: 00f38597ee7dce14d95980cf37cd6b15, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6173618, guid: 00f38597ee7dce14d95980cf37cd6b15, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 00f38597ee7dce14d95980cf37cd6b15, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1748459266
