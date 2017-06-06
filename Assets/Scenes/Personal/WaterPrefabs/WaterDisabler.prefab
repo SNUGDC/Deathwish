@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4232495473869700}
   - component: {fileID: 114718484641407980}
-  - component: {fileID: 114670561349229166}
   m_Layer: 12
   m_Name: WaterManager
   m_TagString: Untagged
@@ -83,18 +82,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WaterRenderer: {fileID: 1083770582531222}
---- !u!114 &114670561349229166
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1083770582531222}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56024fb471c6bf34bbcbfd14b3db4b8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Brick: {fileID: 100000, guid: e0f0b630dcf0d74418857e731bf17af8, type: 2}
 --- !u!114 &114718484641407980
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -106,6 +93,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fce86bec1fc5582428c0853b49b0ad13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _Left: 0
+  _Width: 0
+  _Top: 0
+  _Bottom: 0
   splash: {fileID: 100000, guid: 47bfa965e40c98948a14a77841013404, type: 2}
   mat: {fileID: 2100000, guid: 4437615c3e751844f98d32d8b462f6b8, type: 2}
   watermesh: {fileID: 100000, guid: bd7d08261984f0f47981e1d04ab665d1, type: 2}

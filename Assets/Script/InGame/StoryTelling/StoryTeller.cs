@@ -20,9 +20,12 @@ public class StoryTeller : MonoBehaviour
             _alpha = value;
             var textColor = textComponent.color;
             textComponent.color = new Color(textColor.r, textColor.g, textColor.b, _alpha);
+			var imageColor = imageComponent.color;
+			imageComponent.color = new Color(imageColor.r, imageColor.g, imageColor.b, _alpha);
         }
     }
     public Text textComponent;
+	public Image imageComponent;
 
     /// <summary>
     /// Sent when another object enters a trigger collider attached to this

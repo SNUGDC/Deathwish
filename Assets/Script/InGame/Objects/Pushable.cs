@@ -41,12 +41,18 @@ public class Pushable : MonoBehaviour, IRestartable
 		else if (Global.ingame.GetIsDarkInPosition(gameObject) == IsDark.Dark)
 		{
 			// Setting isKinematic every frame cause physics bug
+			
 			if (rigidbody2d.isKinematic == false)
 			{
+				//testing purposes
+				//GetComponent<Rigidbody2D>().mass = 1000000000;
+				rigidbody2d.velocity = Vector2.zero;
 				rigidbody2d.isKinematic = true;
 			}
 		}
 	}
+
+
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{
