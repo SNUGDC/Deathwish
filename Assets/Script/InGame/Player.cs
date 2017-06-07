@@ -26,7 +26,7 @@ public class Player : MonoBehaviour, IRestartable
 
     private Vector3 startPoint;
     private float yOfLowestObject;
-    private Animator animator;
+    public Animator animator;
     private Climber climber;
     private AllAboutO2 allAboutO2;
 
