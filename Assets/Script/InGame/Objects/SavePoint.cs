@@ -33,4 +33,12 @@ public class SavePoint : MonoBehaviour
         }
         snapshot = new SavePointSnapshot(player.transform.position, Global.ingame.isDark);
     }
+
+    /// <summary>
+    /// This function is called when the MonoBehaviour will be destroyed.
+    /// </summary>
+    void OnDestroy()
+    {
+        snapshot = null;
+    }
 }
