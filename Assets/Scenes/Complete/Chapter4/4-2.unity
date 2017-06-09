@@ -1539,7 +1539,6 @@ Transform:
   m_Children:
   - {fileID: 1295949562}
   - {fileID: 2086207980}
-  - {fileID: 401967615}
   m_Father: {fileID: 0}
   m_RootOrder: 42
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2860,56 +2859,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 407646, guid: 00f38597ee7dce14d95980cf37cd6b15, type: 2}
   m_PrefabInternal: {fileID: 399972356}
---- !u!1001 &401967614
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 258069677}
-    m_Modifications:
-    - target: {fileID: 474246, guid: 7ff552704112f2648aad42fabd7d78f2, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 474246, guid: 7ff552704112f2648aad42fabd7d78f2, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 474246, guid: 7ff552704112f2648aad42fabd7d78f2, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 474246, guid: 7ff552704112f2648aad42fabd7d78f2, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 474246, guid: 7ff552704112f2648aad42fabd7d78f2, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 474246, guid: 7ff552704112f2648aad42fabd7d78f2, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 474246, guid: 7ff552704112f2648aad42fabd7d78f2, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 474246, guid: 7ff552704112f2648aad42fabd7d78f2, type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 119630, guid: 7ff552704112f2648aad42fabd7d78f2, type: 2}
-      propertyPath: m_Name
-      value: Spike (2)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 7ff552704112f2648aad42fabd7d78f2, type: 2}
-  m_IsPrefabParent: 0
---- !u!4 &401967615 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 474246, guid: 7ff552704112f2648aad42fabd7d78f2, type: 2}
-  m_PrefabInternal: {fileID: 401967614}
 --- !u!1001 &404943178
 Prefab:
   m_ObjectHideFlags: 0
@@ -20387,7 +20336,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 411834, guid: ba8161ffa4ef441ffb86f6ac99391f1f, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 18
+      value: 17.5
       objectReference: {fileID: 0}
     - target: {fileID: 411834, guid: ba8161ffa4ef441ffb86f6ac99391f1f, type: 2}
       propertyPath: m_LocalPosition.y
