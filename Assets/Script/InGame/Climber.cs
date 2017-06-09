@@ -12,6 +12,7 @@ class Climber
 	private bool isClimbing = false;
 	private float climbSpeed;
 	private float gravityScale;
+	private Animator animator;
 
 	//bool upOfLadder = false;
 	//bool downOfLadder = false;
@@ -25,6 +26,7 @@ class Climber
 		this.groundChecker = groundChecker;
 		this.climbSpeed = climbSpeed;
 		this.gravityScale = playerRigidbody.gravityScale;
+		this.animator = playerGo.GetComponent<Player>().animator;
 	}
 	
 	public LadderCheckerUp GetLadderCheckerUp()
@@ -52,7 +54,12 @@ class Climber
 			{
 				bool isMoved = MoveUpDown ();
 				if (isMoved == false)
+				{
+					animator.SetFloat("climbSpeed", 0);
 					StayInLadder ();
+				}
+				else
+					animator.SetFloat("climbSpeed", 1.0f);
 			}
 			else
 			{
