@@ -252,11 +252,11 @@ public class DynamicWater : MonoBehaviour {
         UpdateMeshes();
 	}
 
+	/*
     void OnTriggerStay2D(Collider2D Hit)
     {
-        //Bonus exercise. Fill in your code here for making things float in your water.
-        //You might want to even include a buoyancy constant unique to each object!
+        
     }
-
+	*/
 
 }
