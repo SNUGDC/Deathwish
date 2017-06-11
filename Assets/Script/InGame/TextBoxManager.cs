@@ -86,6 +86,7 @@ public class TextBoxManager : MonoBehaviour {
 		}
 		if (stopPlayerMovement) 
 		{
+			Debug.Log("Stop player movement");
 			StartCoroutine(StopPlayerMovement());
 		}
 	}
