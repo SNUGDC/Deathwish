@@ -7586,6 +7586,7 @@ GameObject:
   - component: {fileID: 1028998462}
   - component: {fileID: 1028998461}
   - component: {fileID: 1028998460}
+  - component: {fileID: 1028998465}
   m_Layer: 10
   m_Name: Ladder (1)
   m_TagString: Ladder
@@ -7627,7 +7628,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1028998458}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b2121ee0b8aedc4dbc6649e397d2a3b, type: 3}
   m_Name: 
@@ -7697,6 +7698,19 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!114 &1028998465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1028998458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 784eca4b55a89479b82c021ad0e99859, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightAlpha: 1
+  darkAlpha: 0.3
 --- !u!1001 &1033916489
 Prefab:
   m_ObjectHideFlags: 0
@@ -9426,6 +9440,7 @@ GameObject:
   - component: {fileID: 1252057848}
   - component: {fileID: 1252057847}
   - component: {fileID: 1252057846}
+  - component: {fileID: 1252057851}
   m_Layer: 10
   m_Name: Ladder (4)
   m_TagString: Ladder
@@ -9467,7 +9482,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1252057844}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b2121ee0b8aedc4dbc6649e397d2a3b, type: 3}
   m_Name: 
@@ -9537,6 +9552,19 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!114 &1252057851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1252057844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 784eca4b55a89479b82c021ad0e99859, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightAlpha: 1
+  darkAlpha: 0.3
 --- !u!1001 &1252945058
 Prefab:
   m_ObjectHideFlags: 0
@@ -10517,6 +10545,7 @@ GameObject:
   - component: {fileID: 1405732902}
   - component: {fileID: 1405732901}
   - component: {fileID: 1405732900}
+  - component: {fileID: 1405732905}
   m_Layer: 10
   m_Name: LadderEnd
   m_TagString: Ladder
@@ -10558,7 +10587,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1405732898}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b2121ee0b8aedc4dbc6649e397d2a3b, type: 3}
   m_Name: 
@@ -10628,6 +10657,19 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!114 &1405732905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1405732898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 784eca4b55a89479b82c021ad0e99859, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightAlpha: 1
+  darkAlpha: 0.3
 --- !u!4 &1413673471 stripped
 Transform:
   m_PrefabParentObject: {fileID: 435460, guid: 4a7f71a54485cb54887cc583c05bdbc1, type: 2}
@@ -10918,6 +10960,7 @@ GameObject:
   - component: {fileID: 1446015771}
   - component: {fileID: 1446015770}
   - component: {fileID: 1446015769}
+  - component: {fileID: 1446015774}
   m_Layer: 10
   m_Name: Ladder (3)
   m_TagString: Ladder
@@ -10959,7 +11002,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1446015767}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b2121ee0b8aedc4dbc6649e397d2a3b, type: 3}
   m_Name: 
@@ -11029,6 +11072,19 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!114 &1446015774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1446015767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 784eca4b55a89479b82c021ad0e99859, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightAlpha: 1
+  darkAlpha: 0.3
 --- !u!1 &1448800604
 GameObject:
   m_ObjectHideFlags: 0
@@ -11042,6 +11098,7 @@ GameObject:
   - component: {fileID: 1448800608}
   - component: {fileID: 1448800607}
   - component: {fileID: 1448800606}
+  - component: {fileID: 1448800611}
   m_Layer: 10
   m_Name: LadderStart
   m_TagString: Ladder
@@ -11083,7 +11140,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1448800604}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b2121ee0b8aedc4dbc6649e397d2a3b, type: 3}
   m_Name: 
@@ -11153,6 +11210,19 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!114 &1448800611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1448800604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 784eca4b55a89479b82c021ad0e99859, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightAlpha: 1
+  darkAlpha: 0.3
 --- !u!1001 &1451619962
 Prefab:
   m_ObjectHideFlags: 0
@@ -14432,6 +14502,7 @@ GameObject:
   - component: {fileID: 1843211154}
   - component: {fileID: 1843211153}
   - component: {fileID: 1843211152}
+  - component: {fileID: 1843211157}
   m_Layer: 10
   m_Name: Ladder (2)
   m_TagString: Ladder
@@ -14473,7 +14544,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1843211150}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b2121ee0b8aedc4dbc6649e397d2a3b, type: 3}
   m_Name: 
@@ -14543,6 +14614,19 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!114 &1843211157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1843211150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 784eca4b55a89479b82c021ad0e99859, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightAlpha: 1
+  darkAlpha: 0.3
 --- !u!1001 &1847009523
 Prefab:
   m_ObjectHideFlags: 0
