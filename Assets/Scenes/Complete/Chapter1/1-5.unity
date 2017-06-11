@@ -1380,6 +1380,10 @@ Prefab:
       propertyPath: m_Name
       value: GlassWall (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6103632, guid: 11f02d6a666ab44b1a803bd9dcb36c92, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 11f02d6a666ab44b1a803bd9dcb36c92, type: 2}
   m_IsPrefabParent: 0
@@ -4994,6 +4998,10 @@ Prefab:
       propertyPath: m_Name
       value: GlassWall (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 6103632, guid: 11f02d6a666ab44b1a803bd9dcb36c92, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 11f02d6a666ab44b1a803bd9dcb36c92, type: 2}
   m_IsPrefabParent: 0
@@ -7373,6 +7381,10 @@ Prefab:
       propertyPath: m_Name
       value: GlassWall (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6103632, guid: 11f02d6a666ab44b1a803bd9dcb36c92, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 11f02d6a666ab44b1a803bd9dcb36c92, type: 2}
   m_IsPrefabParent: 0
@@ -7739,6 +7751,22 @@ Prefab:
     - target: {fileID: 483920, guid: 11f02d6a666ab44b1a803bd9dcb36c92, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6103632, guid: 11f02d6a666ab44b1a803bd9dcb36c92, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6103632, guid: 11f02d6a666ab44b1a803bd9dcb36c92, type: 2}
+      propertyPath: m_Size.y
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6103632, guid: 11f02d6a666ab44b1a803bd9dcb36c92, type: 2}
+      propertyPath: m_Offset.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6103632, guid: 11f02d6a666ab44b1a803bd9dcb36c92, type: 2}
+      propertyPath: m_Material
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 11f02d6a666ab44b1a803bd9dcb36c92, type: 2}
@@ -8904,6 +8932,10 @@ Prefab:
       propertyPath: m_Name
       value: GlassWall (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 6103632, guid: 11f02d6a666ab44b1a803bd9dcb36c92, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 11f02d6a666ab44b1a803bd9dcb36c92, type: 2}
   m_IsPrefabParent: 0
@@ -9049,6 +9081,10 @@ Prefab:
     - target: {fileID: 178374, guid: 11f02d6a666ab44b1a803bd9dcb36c92, type: 2}
       propertyPath: m_Name
       value: GlassWall (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6103632, guid: 11f02d6a666ab44b1a803bd9dcb36c92, type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 11f02d6a666ab44b1a803bd9dcb36c92, type: 2}
@@ -9449,6 +9485,10 @@ Prefab:
     - target: {fileID: 178374, guid: 11f02d6a666ab44b1a803bd9dcb36c92, type: 2}
       propertyPath: m_Name
       value: GlassWall (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6103632, guid: 11f02d6a666ab44b1a803bd9dcb36c92, type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 11f02d6a666ab44b1a803bd9dcb36c92, type: 2}
