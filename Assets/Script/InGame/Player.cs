@@ -146,6 +146,10 @@ public class Player : MonoBehaviour, IRestartable
             Global.ingame.ChangeDarkLight();
             Scene.LoadNextStageAndSave();
         }
+        if (Input.GetKeyUp(KeyCode.Z) && Chapter5Cheat.IsCheatAvailable(this))
+        {
+            Global.ingame.ChangeDarkLight();
+        }
         if (Input.GetKeyUp(KeyCode.Escape))
         {
             Scene.Load("SelectStage", Scene.SceneType.StageSelect);
