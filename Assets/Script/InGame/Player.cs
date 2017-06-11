@@ -42,9 +42,10 @@ public class Player : MonoBehaviour, IRestartable
         }
         set
         {
+            Debug.Log("CanMove changed to " + value);
             if (value == false)
             {
-                Debug.Log("CanMove set true");
+                
                 GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
             }
             _canMove = value;

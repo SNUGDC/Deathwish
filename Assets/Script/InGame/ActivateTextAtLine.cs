@@ -16,6 +16,8 @@ public class ActivateTextAtLine : MonoBehaviour {
 
 	public bool destroyWhenActivated;
 
+	public GameObject triggerMirror;
+
 	public bool LightMode;
 	public bool DarkMode;
 
@@ -57,6 +59,10 @@ public class ActivateTextAtLine : MonoBehaviour {
 				theTextBox.EnableTextBox ();
 
 				if (destroyWhenActivated) {
+					if (triggerMirror != null)
+					{
+						Destroy(triggerMirror.GetComponent<SwitchDarkLight>());
+					}
 					Destroy (gameObject);
 				}
 			}
