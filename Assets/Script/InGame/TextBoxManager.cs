@@ -2,7 +2,8 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class TextBoxManager : MonoBehaviour {
+public class TextBoxManager : MonoBehaviour
+{
 
 	public GameObject textBox;
 
@@ -23,68 +24,62 @@ public class TextBoxManager : MonoBehaviour {
 	public float WaitTime;
 
 	// Use this for initialization
-	protected virtual void Start () 
+	protected virtual void Start()
 	{
+		player = FindObjectOfType<Player>();
 
-	
-
-		player = FindObjectOfType<Player> ();
-
-		if (textFiles != null) 
+		if (textFiles != null)
 		{
-			textLines = (textFiles.text.Split ('\n'));
-		} 
-		if (endAtLine == 0) 
+			textLines = (textFiles.text.Split('\n'));
+		}
+		if (endAtLine == 0)
 		{
 			endAtLine = textLines.Length - 1;
 		}
 
-		if (isActive) 
+		if (isActive)
 		{
-			EnableTextBox ();
-		} 
+			EnableTextBox();
+		}
 
-		else 
+		else
 		{
-			DisableTextBox ();
+			DisableTextBox();
 		}
 	}
 
-
-	
 	// Update is called once per frame
-	protected virtual void Update () 
+	protected virtual void Update()
 	{
-
-		if (!isActive) 
+		if (!isActive)
 		{
 			return;
-		} 
+		}
 
-		theText.text = textLines [currentLine];
-		
-		if (Input.GetKeyDown (KeyCode.Space)) 
+		theText.text = textLines[currentLine];
+
+		if (Input.GetKeyDown(KeyCode.Space))
 		{
 			currentLine += 1;
-		} 
+		}
 
 
-		if (currentLine > endAtLine) 
+		if (currentLine > endAtLine)
 		{
-			DisableTextBox ();
+			DisableTextBox();
 		}
 	}
 
 	public void EnableTextBox()
 	{
 		Debug.Log("Enable Text Box");
-		textBox.SetActive (true);
+		textBox.SetActive(true);
 		isActive = true;
-		if (isActive) 
+		if (isActive)
 		{
 			//  StartCoroutine (AutoContinue (WaitTime));
 		}
-		if (stopPlayerMovement) 
+		if (stopPlayerMovement)
 		{
 			Debug.Log("Stop player movement");
 			StartCoroutine(StopPlayerMovement());
@@ -92,38 +87,38 @@ public class TextBoxManager : MonoBehaviour {
 	}
 	public virtual void DisableTextBox()
 	{
-		textBox.SetActive (false);
+		textBox.SetActive(false);
 		isActive = false;
-		StartCoroutine (EnablePlayerMovement ());
-		
+		StartCoroutine(EnablePlayerMovement());
+
 	}
 
 	public void ReloadScript(TextAsset theText)
 	{
-		if(theText != null)
+		if (theText != null)
 		{
 			textLines = new string[1];
-			textLines = (theText.text.Split ('\n'));
-			
+			textLines = (theText.text.Split('\n'));
+
 		}
 	}
 
 	IEnumerator StopPlayerMovement()
 	{
 		Debug.Log("Stop Player movement");
-		yield return new WaitForEndOfFrame ();
+		yield return new WaitForEndOfFrame();
 		player.canMove = false;
 	}
-		
+
 
 	IEnumerator EnablePlayerMovement()
 	{
 		Debug.Log("Start Player movement");
-		yield return new WaitForEndOfFrame ();
+		yield return new WaitForEndOfFrame();
 		player.canMove = true;
 	}
 
-		
+
 	//  	IEnumerator AutoContinue(float WaitTime)
 	//  {
 	//  	for (var f = 1.0; f >= 0; f -= 0.1)
