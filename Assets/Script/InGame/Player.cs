@@ -182,14 +182,6 @@ public class Player : MonoBehaviour, IRestartable
         {
             mainCameraController.MoveDown();
         }
-        else if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            //  mainCameraController.MoveLeft();
-        }
-        else if (Input.GetKey(KeyCode.RightArrow))
-        {
-            //  mainCameraController.MoveRight();
-        }
     }
 
     bool IsOverlappedWithMirror()
@@ -276,19 +268,33 @@ public class Player : MonoBehaviour, IRestartable
     {
         if (gravityDirection == GravityDirection.Normal)
         {
-            if (Input.GetKey(KeyCode.RightArrow))
+            if (Input.GetKey(KeyCode.RightArrow) || isRightButtonDown)
                 playerSpriteObject.transform.rotation = Quaternion.Euler(0, 180, 0);
-            else if (Input.GetKey(KeyCode.LeftArrow))
+            else if (Input.GetKey(KeyCode.LeftArrow) || isLeftButtonDown)
                 playerSpriteObject.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
         else
         {
-            if (Input.GetKey(KeyCode.RightArrow))
+            if (Input.GetKey(KeyCode.RightArrow) || isRightButtonDown)
                 playerSpriteObject.transform.rotation = Quaternion.Euler(180, 180, 0);
-            else if (Input.GetKey(KeyCode.LeftArrow))
+            else if (Input.GetKey(KeyCode.LeftArrow) || isRightButtonDown)
                 playerSpriteObject.transform.rotation = Quaternion.Euler(180, 0, 0);
         }
     }
+
+    bool isLeftButtonDown = false;
+    bool isRightButtonDown = false;
+    bool isJumpButtonDown = false;
+    public void LeftMoveButtonDown() { isLeftButtonDown = true; }
+    public void LeftMoveButtonUp() { isLeftButtonDown = false; }
+    public void RightMoveButtonDown() { isRightButtonDown = true; }
+    public void RightMoveButtonUp() { isRightButtonDown = false; }
+    public void JumpButtonDown() { isJumpButtonDown = true; }
+    public void MirrorButtonDown() 
+    {
+        FindObjectsOfType<SwitchDarkLight>().ToList().ForEach(mirror => mirror.isMirrorButtonDown = true);
+    }
+	
 
     void Move()
     {
@@ -300,11 +306,11 @@ public class Player : MonoBehaviour, IRestartable
             if ((!groundChecker.IsGrounded()) && (OverMaxFallingSpeed(GetComponent<Rigidbody2D>().velocity.y, maxSpeedInAir, GravityCoefficient(gravityDirection))))
                 GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, -1 * maxSpeedInAir * GravityCoefficient(gravityDirection));
 
-            if (Input.GetKey(KeyCode.RightArrow))
+            if (Input.GetKey(KeyCode.RightArrow) || isRightButtonDown)
             {
                 MoveRight1Frame();
             }
-            else if (Input.GetKey(KeyCode.LeftArrow))
+            else if (Input.GetKey(KeyCode.LeftArrow) || isLeftButtonDown)
             {
                 MoveLeft1Frame();
             }
@@ -357,15 +363,17 @@ public class Player : MonoBehaviour, IRestartable
 
     private void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && IsUnderwater())
+        if ((Input.GetKeyDown(KeyCode.Space) || isJumpButtonDown) && IsUnderwater())
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpPower * GetDrag(Direction.Vertical) * GravityCoefficient(gravityDirection));
         }
-        else if (Input.GetKeyDown(KeyCode.Space) && groundChecker.IsGrounded())
+        else if ((Input.GetKeyDown(KeyCode.Space) || isJumpButtonDown) && groundChecker.IsGrounded())
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpPower * GravityCoefficient(gravityDirection));
         }
         else { return; }
+
+        isJumpButtonDown = false;
 
         soundTypePlayedAtCurrentFrame = SoundType.Jump;
         onAir = true;

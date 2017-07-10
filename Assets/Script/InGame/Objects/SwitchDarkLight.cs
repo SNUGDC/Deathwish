@@ -19,17 +19,21 @@ public class SwitchDarkLight : MonoBehaviour, IRestartable
 		blurEffectCamera.enabled = false;
 	}
 
+	public bool isMirrorButtonDown = false;
+
 	void Update()
 	{
 		isGround = GameObject.FindObjectOfType<GroundChecker> ().IsGrounded ();
 
-		if (isPlayer && Input.GetKeyDown(KeyCode.UpArrow) && isGround && (!isItUsedNow)) //changed for mirror disabling purposes when reading dialogue.
+		if (isPlayer && (Input.GetKeyDown(KeyCode.UpArrow) || isMirrorButtonDown) && isGround && (!isItUsedNow)) //changed for mirror disabling purposes when reading dialogue.
 		{
 			if ((FindObjectOfType<TextBoxManager>() != null) && (FindObjectOfType<TextBoxManager>().isActive))
 				return;
 			mirrorEffectCoroutine = PlayMirrorEffect();
 			StartCoroutine(mirrorEffectCoroutine);
 		}
+
+		isMirrorButtonDown = false;
 	}
 
 	IEnumerator PlayMirrorEffect()
