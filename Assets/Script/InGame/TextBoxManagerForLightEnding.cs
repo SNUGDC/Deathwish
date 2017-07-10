@@ -68,6 +68,7 @@ public class TextBoxManagerForLightEnding : TextBoxManager {
 		switch (effectNum)
 		{
 			case 1:
+                textBox.SetActive(false);
 				yield return StartCoroutine(MakeNPercentDark(50, blackImage));
 				break;
 			case 2:

@@ -83,8 +83,6 @@ public class Player : MonoBehaviour, IRestartable
 
         if (gravityDirection == GravityDirection.Reverse)
         {
-            GetComponentInChildren<Camera>().enabled = false;
-            GetComponentInChildren<AudioListener>().enabled = false;
             this.transform.rotation = Quaternion.Euler(180, 0, 0);
         }
     }
