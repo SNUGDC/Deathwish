@@ -2,7 +2,8 @@
 using System.Collections;
 using Enums;
 
-public class ActiveTempJail : MonoBehaviour {
+public class ActiveTempJail : MonoBehaviour
+{
 
 	public enum ActiveTrigger
 	{
@@ -17,28 +18,30 @@ public class ActiveTempJail : MonoBehaviour {
 	public Collider2D triggerCollider;
 	public GameObject nextShoutZone;
 	public IsDark disappearIn;
-	
+
 	public GameObject triggerMirror;
 
-	// Use this for initialization
-	void Start () {
-
-	}
-	
 	// Update is called once per frame
-	void Update () {
-		if ((activeTrigger == ActiveTrigger.ShoutZone) && (triggerShoutZone == null) && (GameObject.FindObjectOfType<TextBoxManager>().isActive == false)
-			&& (nextShoutZone != null) && (tempJail.activeInHierarchy == false) 
+	void Update()
+	{
+		if ((nextShoutZone != null) && (tempJail.activeInHierarchy == false)
 			&& (disappearIn != Global.ingame.isDark))
-			tempJail.SetActive(true);
-		else if ((activeTrigger == ActiveTrigger.Collider) && (triggerCollider == null)
-			&& (nextShoutZone != null) && (tempJail.activeInHierarchy == false) 
-			&& (disappearIn != Global.ingame.isDark))
-			tempJail.SetActive(true);
+		{
+			if ((activeTrigger == ActiveTrigger.ShoutZone)
+				&& (triggerShoutZone == null) && !StoryTeller.ShouldStop())
+			{
+				tempJail.SetActive(true);
+			}
+			else if ((activeTrigger == ActiveTrigger.Collider)
+				&& (triggerCollider == null))
+			{
+				tempJail.SetActive(true);
+			}
+		}
 
 		if ((tempJail.activeInHierarchy == true) && (disappearIn == Global.ingame.isDark))
 		{
-			tempJail.SetActive(false);	
+			tempJail.SetActive(false);
 			// Destroy(triggerMirror.GetComponent<SwitchDarkLight>(), 3f);
 		}
 	}

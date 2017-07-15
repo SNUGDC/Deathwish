@@ -27,7 +27,7 @@ public class SwitchDarkLight : MonoBehaviour, IRestartable
 
 		if (isPlayer && (Input.GetKeyDown(KeyCode.UpArrow) || isMirrorButtonDown) && isGround && (!isItUsedNow)) //changed for mirror disabling purposes when reading dialogue.
 		{
-			if ((FindObjectOfType<TextBoxManager>() != null) && (FindObjectOfType<TextBoxManager>().isActive))
+			if (StoryTeller.ShouldStop())
 				return;
 			mirrorEffectCoroutine = PlayMirrorEffect();
 			StartCoroutine(mirrorEffectCoroutine);
