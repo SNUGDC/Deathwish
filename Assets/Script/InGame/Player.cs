@@ -138,7 +138,6 @@ public class Player : MonoBehaviour, IRestartable
         if (Input.GetKeyUp(KeyCode.C) && Chapter5Cheat.IsCheatAvailable(this))
         {
             Scene.LoadNextStageAndSave();
-            TrackClearCheat();
         }
         if (Input.GetKeyUp(KeyCode.X) && Chapter5Cheat.IsCheatAvailable(this))
         {
@@ -188,16 +187,6 @@ public class Player : MonoBehaviour, IRestartable
         var otherColliders = Physics2D.OverlapAreaAll(coll.bounds.max, coll.bounds.min);
 
         return otherColliders.Any(k => k.GetComponent<SwitchDarkLight>() != null);
-    }
-
-    private void TrackClearCheat()
-    {
-        if (GoogleAnalyticsV3.getInstance() == null)
-        {
-            return;
-        }
-
-        GoogleAnalyticsV3.getInstance().LogEvent("cheat", "clear", Scene.currentSceneName.ToString(), 1);
     }
 
     public void PlayDieAnimSoundAndRestart(SoundType soundType)

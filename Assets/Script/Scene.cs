@@ -38,7 +38,6 @@ public class Scene
 	{
 		currentSceneName = new MapName(sceneName);
 		currentSceneType = sceneType;
-		TrackSceneLoad(currentSceneName);
 		Application.LoadLevel (sceneName);
 		BeforeLoad (); // global.ingame should be null after loading scene.
 		AfterLoad ();
@@ -50,7 +49,6 @@ public class Scene
 		{
 			var levelTag = mapNameToLevelTag[currentSceneName];
 			SaveLoad.SaveClear(levelTag, Global.ingame.isDark);
-			TrackClearEvent(levelTag, Global.ingame.isDark);
 			var nextLevelTag = GetNextLevelTag();
 
 			if (nextLevelTag == null)
@@ -79,34 +77,6 @@ public class Scene
 			throw;
 		}
     }
-
-    private static void TrackSceneLoad(MapName currentSceneName)
-    {
-        if (GoogleAnalyticsV3.getInstance() == null)
-		{
-			return;
-		}
-
-		GoogleAnalyticsV3.getInstance().LogScreen(currentSceneName.ToString());
-    }
-
-    private static void TrackClearEvent(LevelTag levelTag, IsDark isDark)
-    {
-        if (GoogleAnalyticsV3.getInstance() == null)
-		{
-			return;
-		}
-
-		if (Global.ingame.isDark == Enums.IsDark.Light)
-		{
-			GoogleAnalyticsV3.getInstance().LogEvent("stage", "clear-light-" + levelTag.ToString(), levelTag.ToString(), 1);
-		}
-		else if (Global.ingame.isDark == Enums.IsDark.Dark)
-		{
-			GoogleAnalyticsV3.getInstance().LogEvent("stage", "clear-dark-" + levelTag.ToString(), levelTag.ToString(), 1);
-		}
-    }
-
     private static void InterceptInLoadNextScene(LevelTag nextLevelTag)
     {
 		if (nextLevelTag.Chapter == 5 && nextLevelTag.Stage == 1)
@@ -127,7 +97,7 @@ public class Scene
 		var ratio = GetClearRatio();
 		return ratio > 0.2f && ratio < 0.8f;
     }
-	
+
 	private static bool IsLightEnding()
 	{
 		var ratio = GetClearRatio();
@@ -150,7 +120,7 @@ public class Scene
 				}
 			}
 		}
-		
+
 		var ratio = (float)lightClearCount / totalCount;
 		return ratio;
     }
@@ -168,7 +138,7 @@ public class Scene
 			return null;
 		}
     }
-	
+
 	public static LevelTag? GetPreviousLevelTag(LevelTag current)
 	{
 		IEnumerable<LevelTag> levelTags = levelTagToMapName.Keys.Reverse();
@@ -189,7 +159,7 @@ public class Scene
     public static LevelTag currentLevelTag {
 		 get {
 			 return mapNameToLevelTag[currentSceneName];
-		 } 
+		 }
 	}
 
     public static void AddStage(MapName mapName, LevelTag levelTag)
