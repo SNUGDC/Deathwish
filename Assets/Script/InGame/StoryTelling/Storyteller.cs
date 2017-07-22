@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +7,16 @@ public class StoryTeller
 {
     public static bool ShouldStop()
     {
+		return IsTextBoxActive() || IsBlockingStoryTellerActive();
+    }
+
+    private static bool IsBlockingStoryTellerActive()
+    {
+		return BlockingStoryteller.Instance.IsShowingText();
+    }
+
+    private static bool IsTextBoxActive()
+	{
         TextBoxManager textBoxManager = GameObject.FindObjectOfType<TextBoxManager>();
 
         if (textBoxManager == null)
@@ -14,5 +25,5 @@ public class StoryTeller
         }
 
         return textBoxManager.isActive == true;
-    }
+	}
 }
