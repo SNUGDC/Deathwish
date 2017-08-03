@@ -4,7 +4,7 @@ using System.Collections;
 public class TextGuide : MonoBehaviour {
 
 	public GameObject shoutZone;
-	
+
 	private bool isAlreadyActive = false;
 	private SpriteRenderer renderer;
 
@@ -13,17 +13,17 @@ public class TextGuide : MonoBehaviour {
 		renderer = gameObject.GetComponent<SpriteRenderer>();
 		renderer.enabled = false;
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-		if ((isAlreadyActive == false) && (shoutZone == null) && 
-			(GameObject.FindObjectOfType<TextBoxManager>().isActive == true))
+		if ((isAlreadyActive == false) && (shoutZone == null) &&
+			(StoryTeller.ShouldStop()))
 		{
 			isAlreadyActive = true;
 			renderer.enabled = true;
 		}
 
-		if ((renderer.enabled = true) && (GameObject.FindObjectOfType<TextBoxManager>().isActive == false))
+		if ((renderer.enabled = true) && StoryTeller.ShouldStop() == false)
 			renderer.enabled = false;
 	}
 }

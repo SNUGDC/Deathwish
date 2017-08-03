@@ -3,12 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using Enums;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BlockingStorytellerTrigger : MonoBehaviour
 {
     public string textFileName = "";
     public bool lightMode;
     public bool darkMode;
+
+	public UnityEvent onDialogueEnd;
 
     void OnTriggerStay2D(Collider2D other)
     {
@@ -25,7 +28,7 @@ public class BlockingStorytellerTrigger : MonoBehaviour
         }
 
         TextAsset textAsset = Resources.Load<TextAsset>("Text/" + textFileName);
-        BlockingStoryteller.Instance.Show(textAsset);
+        BlockingStoryteller.Instance.Show(textAsset, onDialogueEnd: () => onDialogueEnd.Invoke());
 
         Destroy(gameObject);
     }

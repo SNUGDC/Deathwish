@@ -15,10 +15,18 @@ public class TextBox : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        textLines = new string[0];
-        onDialogueEnd = () => { };
+        if (textLines == null)
+        {
+            textLines = new string[0];
+        }
+
+        if (onDialogueEnd == null)
+        {
+            onDialogueEnd = () => { };
+        }
     }
 
+	// ShowDialogue may be called before Start method
     public void ShowDialogue(string dialogue, Action onDialogueEnd)
     {
         gameObject.SetActive(true);
@@ -34,7 +42,7 @@ public class TextBox : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (currentLine == textLines.Length - 1)
+            if (currentLine >= textLines.Length - 1)
             {
                 textLines = new string[0];
                 currentLine = 0;

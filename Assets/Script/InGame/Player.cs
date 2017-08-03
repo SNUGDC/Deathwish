@@ -45,7 +45,7 @@ public class Player : MonoBehaviour, IRestartable
             Debug.Log("CanMove changed to " + value);
             if (value == false)
             {
-                
+
                 GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
             }
             _canMove = value;
@@ -277,11 +277,11 @@ public class Player : MonoBehaviour, IRestartable
     public void RightMoveButtonDown() { isRightButtonDown = true; }
     public void RightMoveButtonUp() { isRightButtonDown = false; }
     public void JumpButtonDown() { isJumpButtonDown = true; }
-    public void MirrorButtonDown() 
+    public void MirrorButtonDown()
     {
         FindObjectsOfType<SwitchDarkLight>().ToList().ForEach(mirror => mirror.isMirrorButtonDown = true);
     }
-	
+
 
     void Move()
     {
@@ -528,7 +528,7 @@ public class Player : MonoBehaviour, IRestartable
 		Collider2D[] otherColliders = Physics2D.OverlapAreaAll(o2CheckCollider.bounds.max, o2CheckCollider.bounds.min);
 		foreach (Collider2D otherCollider in otherColliders)
 		{
-			if ((otherCollider.gameObject.tag == "Water") && 
+			if ((otherCollider.gameObject.tag == "Water") &&
 				(otherCollider.gameObject.GetComponent<Water>().IsActive()))
 				return true;
 		}

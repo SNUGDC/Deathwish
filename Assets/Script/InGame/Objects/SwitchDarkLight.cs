@@ -2,9 +2,11 @@
 using System.Collections;
 using Enums;
 using UnityStandardAssets.ImageEffects;
+using UnityEngine.Events;
 
 public class SwitchDarkLight : MonoBehaviour, IRestartable
 {
+	public UnityEvent onAfterSwitchDarkLight;
 	private bool isGround;
 	private bool isPlayer = false;
 	private bool isItUsedNow = false;
@@ -44,17 +46,17 @@ public class SwitchDarkLight : MonoBehaviour, IRestartable
 		player.canMove = false;
 		blur.blurSize = 0;
 		blurEffectCamera.enabled = true;
-		
+
 		SoundEffectController soundEffectController
 			= GameObject.FindObjectOfType(typeof(SoundEffectController)) as SoundEffectController;
 		soundEffectController.Play(SoundType.Mirror);
-		
+
 		for (int i = 0; i < 50; i++)
 		{
 			blurEffectCamera.GetComponent<BlurOptimized>().blurSize += 0.2f;
 			yield return new WaitForSeconds(0.5f / 50f);
 		}
-		
+
 		Global.ingame.ChangeDarkLight();
 
 		for (int i = 0; i < 50; i++)
@@ -62,10 +64,11 @@ public class SwitchDarkLight : MonoBehaviour, IRestartable
 			blurEffectCamera.GetComponent<BlurOptimized>().blurSize -= 0.2f;
 			yield return new WaitForSeconds(0.5f / 50f);
 		}
-		
+
 		blurEffectCamera.enabled = false;
 		player.canMove = true;
 		isItUsedNow = false;
+		onAfterSwitchDarkLight.Invoke();
 	}
 
 	void OnTriggerEnter2D(Collider2D player)

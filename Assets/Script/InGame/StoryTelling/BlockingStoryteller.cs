@@ -32,11 +32,14 @@ public class BlockingStoryteller : MonoBehaviour
         return textBox.showingText;
     }
 
-    public void Show(TextAsset textAsset)
+    public void Show(TextAsset textAsset, Action onDialogueEnd)
     {
         Debug.Log("Show text" + textAsset.name);
         Debug.Log(textAsset.text);
-        textBox.ShowDialogue(textAsset.text, () => player.canMove = true);
+        textBox.ShowDialogue(textAsset.text, onDialogueEnd: () => {
+			player.canMove = true;
+			onDialogueEnd();
+		});
 
         player.canMove = false;
     }
