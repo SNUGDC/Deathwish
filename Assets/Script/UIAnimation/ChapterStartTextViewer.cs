@@ -1,12 +1,13 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class ChapterStartTextViewer : MonoBehaviour {
 
-	public GameObject chapterTitleText;
-	public GameObject chapterPrologueText;
+	public Text chapterTitleText;
+	public Text chapterPrologueText;
 	public TextAsset chapterPrologueTextFile;
-	public GameObject chapterBackground;
+	public Image chapterBackground;
 
 	// Use this for initialization
 	IEnumerator Start () {
@@ -23,10 +24,10 @@ public class ChapterStartTextViewer : MonoBehaviour {
 			textMesh.text = chapterPrologueTextFile.text;
 		}
 
-		yield return StartCoroutine(ViewText(chapterTitleText.GetComponent<TextMesh>()));
+		yield return StartCoroutine(ViewText(chapterTitleText));
 		
 		if (chapterPrologueText != null)
-			yield return StartCoroutine(ViewText(chapterPrologueText.GetComponent<TextMesh>()));
+			yield return StartCoroutine(ViewText(chapterPrologueText));
 
 		yield return StartCoroutine(FadeOutBackground());
 
@@ -35,18 +36,17 @@ public class ChapterStartTextViewer : MonoBehaviour {
 
 	void Initialize()
 	{
-		chapterBackground.GetComponent<SpriteRenderer>().color = Color.black;
+		chapterBackground.color = Color.black;
 		if (chapterPrologueText != null)
-			chapterPrologueText.GetComponent<TextMesh>().color += new Color(0, 0, 0, -1); 
-		chapterTitleText.GetComponent<TextMesh>().color += new Color(0, 0, 0, -1);
+			chapterPrologueText.color += new Color(0, 0, 0, -1); 
+		chapterTitleText.color += new Color(0, 0, 0, -1);
 	}
 
 	IEnumerator FadeInBackground()
 	{
-		SpriteRenderer sr = chapterBackground.GetComponent<SpriteRenderer>(); 
 		for (int i=0; i<50; i++)
 		{
-			sr.color += new Color(0.02f, 0.02f, 0.02f, 0);
+			chapterBackground.color += new Color(0.02f, 0.02f, 0.02f, 0);
 			yield return new WaitForSeconds(0.005f);
 		}
 		
@@ -55,19 +55,18 @@ public class ChapterStartTextViewer : MonoBehaviour {
 
 	IEnumerator FadeOutBackground()
 	{
-		SpriteRenderer sr = chapterBackground.GetComponent<SpriteRenderer>(); 
 		for (int i=0; i<50; i++)
 		{
-			sr.color -= new Color(0, 0, 0, 0.02f);
+			chapterBackground.color -= new Color(0, 0, 0, 0.02f);
 			yield return new WaitForSeconds(0.005f);
 		}
 	}	
 	
-	IEnumerator ViewText(TextMesh textMesh)
+	IEnumerator ViewText(Text text)
 	{
 		for (int i=0; i<50; i++)
 		{
-			textMesh.color += new Color(0, 0, 0, 0.02f);
+			text.color += new Color(0, 0, 0, 0.02f);
 			yield return new WaitForSeconds(0.005f);
 		}
 
@@ -75,7 +74,7 @@ public class ChapterStartTextViewer : MonoBehaviour {
 
 		for (int i=0; i<50; i++)
 		{
-			textMesh.color -= new Color(0, 0, 0, 0.02f);
+			text.color -= new Color(0, 0, 0, 0.02f);
 			yield return new WaitForSeconds(0.005f);
 		}
 
