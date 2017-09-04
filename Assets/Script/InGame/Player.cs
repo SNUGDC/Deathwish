@@ -28,7 +28,7 @@ public class Player : MonoBehaviour, IRestartable
     private float yOfLowestObject;
     public Animator animator;
     private Climber climber;
-    private AllAboutO2 allAboutO2;
+    public AllAboutO2 allAboutO2;
 
     float gravityScaleOfStartTime;
     HashSet<GameObject> pushableObjectsNearbyPlayer;
@@ -71,7 +71,7 @@ public class Player : MonoBehaviour, IRestartable
     {
         mainCameraController = Camera.main.gameObject.GetComponent<CameraController>();
         pushableObjectsNearbyPlayer = new HashSet<GameObject>();
-        allAboutO2 = FindObjectOfType<AllAboutO2>();
+        // allAboutO2 = FindObjectOfType<AllAboutO2>();
         animator = GetComponentInChildren<Animator>();
         startPoint = gameObject.transform.position;
         GetComponent<Rigidbody2D>().gravityScale = GetComponent<Rigidbody2D>().gravityScale * GravityCoefficient(gravityDirection);
