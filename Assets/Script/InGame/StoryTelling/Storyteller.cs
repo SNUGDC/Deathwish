@@ -12,7 +12,6 @@ public class StoryTeller
 
     private static bool IsBlockingStoryTellerActive()
     {
-      if (BlockingStoryteller.Instance == null) return false;
 		return BlockingStoryteller.Instance.IsShowingText();
     }
 

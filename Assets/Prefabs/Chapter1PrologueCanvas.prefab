@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chapterTitleText: {fileID: 114097619963041572}
-  chapterPrologueText: {fileID: 114517025992006950}
+  chapterPrologueText: {fileID: 0}
   chapterPrologueTextFile: {fileID: 0}
   chapterBackground: {fileID: 114319795920419090}
 --- !u!114 &114517025992006950
